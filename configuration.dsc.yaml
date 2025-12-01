@@ -1,0 +1,229 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+metadata:
+  winget:
+    processor: dscv3
+resources:
+  # ---------------------------------------------------
+  # Developer Tools
+  # ---------------------------------------------------
+  - name: Install Git
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Git.Git
+      source: winget
+      ensure: Present
+
+  - name: Install Visual Studio Code
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Microsoft.VisualStudioCode
+      source: winget
+      ensure: Present
+
+  - name: Install Notepad++
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Notepad++.Notepad++
+      source: winget
+      ensure: Present
+
+  - name: Install Visual Studio 2026 Community
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Microsoft.VisualStudio.Community
+      source: winget
+      ensure: Present
+
+  - name: Install Windows Terminal
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Microsoft.WindowsTerminal
+      source: winget
+      ensure: Present
+
+  - name: Install Podman Desktop
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: RedHat.Podman-Desktop
+      source: winget
+      ensure: Present
+
+  # ---------------------------------------------------
+  # Utilities & Productivity
+  # ---------------------------------------------------
+  - name: Install Microsoft PowerToys
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Microsoft.PowerToys
+      source: winget
+      ensure: Present
+
+  - name: Install 7-Zip
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: 7zip.7zip
+      source: winget
+      ensure: Present
+
+  - name: Install KeePass 2
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: DominikReichl.KeePass
+      source: winget
+      ensure: Present
+
+  # ---------------------------------------------------
+  # Media & Graphics
+  # ---------------------------------------------------
+  - name: Install Spotify
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: Spotify.Spotify
+      source: winget
+      ensure: Present
+
+  - name: Install VLC Media Player
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: VideoLAN.VLC
+      source: winget
+      ensure: Present
+
+  - name: Install Paint.NET
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    module: Microsoft.WinGet.DSC
+    properties:
+      id: dotPDN.PaintDotNet
+      source: winget
+      ensure: Present
+
+  # ---------------------------------------------------
+  # System Settings
+  # ---------------------------------------------------
+  - name: Enable Developer Mode, dark mode, and align taskbar to the left
+    type: Microsoft.Windows.Settings/WindowsSettings
+    module: Microsoft.Windows.Settings
+    properties:
+      DeveloperMode: true
+      AppColorMode: Dark
+      SystemColorMode: Dark
+      TaskbarAlignment: Left
+
+  - name: Modify taskbar settings
+    type: Microsoft.Windows.Developer/Taskbar
+    module: Microsoft.Windows.Developer
+    properties:
+      Alignment: Left
+      HideLabelsMode: Always
+      SearchBoxMode: SearchBox
+      TaskViewButton: Show
+      WidgetsButton: Hide
+      RestartExplorer: true
+
+  - name: Modify Windows Explorer settings (developer-friendly)
+    type: Microsoft.Windows.Developer/WindowsExplorer
+    module: Microsoft.Windows.Developer
+    properties:
+      FileExtensions: Show
+      HiddenFiles: Show
+      ItemCheckBoxes: Show
+      RestartExplorer: true
+
+  # ---------------------------------------------------
+  # VS Code Extensions
+  # ---------------------------------------------------
+  - name: C# language support
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-dotnettools.csharp
+
+  - name: C# Dev Kit (project/solution tooling)
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-dotnettools.csdevkit
+
+  - name: .NET Runtime Install Tool
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-dotnettools.vscode-dotnet-runtime
+
+  - name: REST Client
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: humao.rest-client
+
+  - name: YAML (Kubernetes / GitHub Actions / config files)
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: redhat.vscode-yaml
+
+  - name: Azure Tools extension pack
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-vscode.vscode-node-azure-pack
+
+  - name: Bicep (Azure IaC)
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-azuretools.vscode-bicep
+
+  - name: Docker extension
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-azuretools.vscode-docker
+
+  - name: Podman extension
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: redhat.vscode-podman
+
+  - name: Remote Development Pack (SSH / WSL / Containers)
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-vscode-remote.vscode-remote-extensionpack
+
+  - name: Dev Containers support
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: ms-vscode-remote.remote-containers
+
+  - name: GitLens (enhanced Git features)
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: eamodio.gitlens
+
+  - name: EditorConfig support
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: editorconfig.editorconfig
+
+  - name: Code Spell Checker
+    type: Microsoft.VSCode.Dsc/VSCodeExtension
+    module: Microsoft.VSCode.Dsc
+    properties:
+      Name: streetsidesoftware.code-spell-checker
