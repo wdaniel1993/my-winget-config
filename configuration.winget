@@ -39,7 +39,7 @@ resources:
     directives:
       description: Install Visual Studio 2026 Community
     settings:
-      id: Microsoft.VisualStudio.2026.Community
+      id: Microsoft.VisualStudio.Community
       source: winget
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
