@@ -234,15 +234,6 @@ properties:
         Name: ms-azuretools.vscode-docker
   
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
-      id: VSCodeExtensionPodman
-      directives:
-        description: Podman extension
-        allowPrerelease: true
-        dependsOn: [VSCode]
-      settings:
-        Name: redhat.vscode-podman
-  
-    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       id: VSCodeExtensionRemotePack
       directives:
         description: Remote Development Pack (SSH / WSL / Containers)
