@@ -37,9 +37,9 @@ resources:
   - resource: Microsoft.WinGet.DSC/WinGetPackage
     id: VSCommunity
     directives:
-      description: Install Visual Studio 2022 Community
+      description: Install Visual Studio 2026 Community
     settings:
-      id: Microsoft.VisualStudio.2022.Community
+      id: Microsoft.VisualStudio.2026.Community
       source: winget
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
