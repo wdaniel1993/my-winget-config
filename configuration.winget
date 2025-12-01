@@ -47,7 +47,15 @@ properties:
       settings:
         id: Microsoft.WindowsTerminal
         source: winget
-  
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Podman
+      directives:
+        description: Install Podman
+      settings:
+        id: RedHat.Podman
+        source: winget
+
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: PodmanDesktop
       directives:
