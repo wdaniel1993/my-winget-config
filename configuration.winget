@@ -117,6 +117,7 @@ properties:
       id: DevDrive
       directives:
         description: Create a 100GB Dev Drive at D
+        allowPrerelease: true
       settings:
         Path: "D:"
         Label: "DevDrive"
@@ -143,6 +144,7 @@ properties:
     - resource: Microsoft.Windows.Developer/Taskbar
       directives:
         description: Modify taskbar settings
+        allowPrerelease: true
       settings:
         Alignment: Left
         HideLabelsMode: Always
@@ -154,6 +156,7 @@ properties:
     - resource: Microsoft.Windows.Developer/WindowsExplorer
       directives:
         description: Modify Windows Explorer settings (developer-friendly)
+        allowPrerelease: true
       settings:
         FileExtensions: Show
         HiddenFiles: Show
@@ -167,6 +170,7 @@ properties:
       id: VSCodeExtensionCSharp
       directives:
         description: C# language support
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-dotnettools.csharp
@@ -175,6 +179,7 @@ properties:
       id: VSCodeExtensionCSharpDevKit
       directives:
         description: C# Dev Kit (project/solution tooling)
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-dotnettools.csdevkit
@@ -183,6 +188,7 @@ properties:
       id: VSCodeExtensionDotNetRuntime
       directives:
         description: .NET Runtime Install Tool
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-dotnettools.vscode-dotnet-runtime
@@ -192,6 +198,7 @@ properties:
       id: VSCodeExtensionRESTClient
       directives:
         description: REST Client
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: humao.rest-client
@@ -200,6 +207,7 @@ properties:
       id: VSCodeExtensionYAML
       directives:
         description: YAML (Kubernetes / GitHub Actions / config files)
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: redhat.vscode-yaml
@@ -209,6 +217,7 @@ properties:
       id: VSCodeExtensionAzureTools
       directives:
         description: Azure Tools extension pack
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-vscode.vscode-node-azure-pack
@@ -217,6 +226,7 @@ properties:
       id: VSCodeExtensionBicep
       directives:
         description: Bicep (Azure IaC)
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-azuretools.vscode-bicep
@@ -226,6 +236,7 @@ properties:
       id: VSCodeExtensionDocker
       directives:
         description: Docker extension
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-azuretools.vscode-docker
@@ -234,6 +245,7 @@ properties:
       id: VSCodeExtensionPodman
       directives:
         description: Podman extension
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: redhat.vscode-podman
@@ -242,6 +254,7 @@ properties:
       id: VSCodeExtensionRemotePack
       directives:
         description: Remote Development Pack (SSH / WSL / Containers)
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-vscode-remote.vscode-remote-extensionpack
@@ -250,6 +263,7 @@ properties:
       id: VSCodeExtensionDevContainers
       directives:
         description: Dev Containers support
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: ms-vscode-remote.remote-containers
@@ -259,6 +273,7 @@ properties:
       id: VSCodeExtensionGitLens
       directives:
         description: GitLens (enhanced Git features)
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: eamodio.gitlens
@@ -267,6 +282,7 @@ properties:
       id: VSCodeExtensionEditorConfig
       directives:
         description: EditorConfig support
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: editorconfig.editorconfig
@@ -275,6 +291,7 @@ properties:
       id: VSCodeExtensionSpellChecker
       directives:
         description: Code Spell Checker
+        allowPrerelease: true
         dependsOn: [VSCode]
       settings:
         Name: streetsidesoftware.code-spell-checker
