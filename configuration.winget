@@ -113,18 +113,22 @@ properties:
     # ---------------------------------------------------
     # Dev Drive
     # ---------------------------------------------------
-    - resource: Microsoft.Windows.Developer/DevDrive
+    - resource: StorageDsc/Disk
       id: DevDrive
       directives:
         description: Create a 100GB Dev Drive at D
+        module: StorageDsc
         allowPrerelease: true
+        securityContext: elevated
       settings:
-        Path: "D:"
-        Label: "DevDrive"
-        FileSystem: ReFS
-        SizeInGB: 100
-        AssignDriveLetter: true
-        EnableTrust: true
+        DiskId: '0'
+        DiskIdType: 'Number'
+        DriveLetter: 'D'
+        FSLabel: 'DevDrive'
+        DevDrive: true
+        AllowDestructive: true
+        FSFormat: 'ReFS'
+        Size: '100Gb'
   
     # ---------------------------------------------------
     # System Settings
